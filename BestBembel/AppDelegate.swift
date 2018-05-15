@@ -1,0 +1,45 @@
+//
+//  AppDelegate.swift
+//  BestBembel
+//
+//  Created by Sebastian Bachmann on 15.05.18.
+//  Copyright © 2018 Sebastian Bachmann. All rights reserved.
+//
+
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    
+    var bestbembelcontroller : BestBembelViewController!
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        bestbembelcontroller = BestBembelViewController()
+        
+        window?.rootViewController = UINavigationController(rootViewController: bestbembelcontroller)
+        window?.makeKeyAndVisible()
+        
+        return true
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+    }
+
+
+}
+
