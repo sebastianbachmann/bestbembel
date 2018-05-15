@@ -75,7 +75,11 @@ class BestBembelView: UIView {
         }()
 
         bestBembelButton = {
-            let button = UIButton(type: UIButtonType.custom)
+            let button = UIButton(type: .system)
+            button.setTitle("Message Us", for: .normal)
+            button.titleLabel?.textColor = .white
+            button.backgroundColor = .red
+            button.translatesAutoresizingMaskIntoConstraints = false
             return button
         }()
 
@@ -87,20 +91,21 @@ class BestBembelView: UIView {
 
         var layoutconstraints = [NSLayoutConstraint]()
         
-        layoutconstraints.append(welcomeToBestBembelLabel.centerXAnchor.constraint(equalTo: centerXAnchor))
         layoutconstraints.append(welcomeToBestBembelLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20.0))
         layoutconstraints.append(welcomeToBestBembelLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor))
         layoutconstraints.append(welcomeToBestBembelLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor))
         
-        layoutconstraints.append(bestBembelImageView.topAnchor.constraint(equalTo: welcomeToBestBembelLabel.topAnchor))
-        layoutconstraints.append(bestBembelImageView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 20.0))
-        layoutconstraints.append(bestBembelImageView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -20.0))
-        layoutconstraints.append(bestBembelImageView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0.0))
+        layoutconstraints.append(bestBembelImageView.topAnchor.constraint(equalTo: welcomeToBestBembelLabel.topAnchor, constant: 40.0))
+        layoutconstraints.append(bestBembelImageView.widthAnchor.constraint(equalToConstant: 370))
+        layoutconstraints.append(bestBembelImageView.heightAnchor.constraint(equalToConstant: 222))
         
         layoutconstraints.append(bestBembelImageViewLabel.centerXAnchor.constraint(equalTo: bestBembelImageView.centerXAnchor))
         layoutconstraints.append(bestBembelImageViewLabel.bottomAnchor.constraint(equalTo: bestBembelImageView.bottomAnchor))
         
         layoutconstraints.append(bestBembelButton.centerXAnchor.constraint(equalTo: centerXAnchor))
+        layoutconstraints.append(bestBembelButton.topAnchor.constraint(equalTo: bestBembelImageView.bottomAnchor, constant: 40.0))
+        layoutconstraints.append(bestBembelButton.widthAnchor.constraint(equalToConstant: 200.0))
+        layoutconstraints.append(bestBembelButton.heightAnchor.constraint(equalToConstant: 80.0))
         
         NSLayoutConstraint.activate(layoutconstraints)
     }
